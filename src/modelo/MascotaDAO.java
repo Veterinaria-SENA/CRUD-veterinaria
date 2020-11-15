@@ -18,6 +18,23 @@ public class MascotaDAO {
             Connection accesoDB = conexion.getConexion();
             
             if(accesoDB != null) {
+                PreparedStatement ps = accesoDB.prepareStatement(""
+                        + "INSERT INTO mascota "
+                        + "(id_propietario, nombre, tipo, raza, color, peso, edad, observaciones, id_historia_clinica, carnet_vacunacion_id_carnet_vacunacion)"
+                        + "VALUES (?,?,?,?,?,?,?,?,?,?)");
+                //ps.setInt(1, idMascota); la base de datos llena los id autoincrement,
+                ps.setInt(1, idPropietario);// verificar si se deja autoincremet o debe ser de tipo string (cedula dueño)
+                ps.setString(2, nombre);
+                ps.setString(3, tipo);
+                ps.setString(4, raza);
+                ps.setString(5, color);
+                ps.setFloat(6, peso);
+                ps.setInt(7, edad);
+                ps.setString(8, observaciones);
+                ps.setInt(9, idHistoriaClinica);
+                ps.setInt(10, carnetVacunacionIdCarnetVacunacion);
+                       
+                        
                 CallableStatement cs = accesoDB.prepareCall("{call ap_insertMascota(?,?,?,?,?,?,?,?,?,?,?)}" );
                 cs.setInt(1, idMascota);
                 cs.setInt(2, idPropietario);
@@ -31,7 +48,8 @@ public class MascotaDAO {
                 cs.setInt(10, idHistoriaClinica);
                 cs.setInt(11, carnetVacunacionIdCarnetVacunacion);
 
-                int numFAfectadas=cs.executeUpdate();
+                //int numFAfectadas=cs.executeUpdate();
+                int numFAfectadas = ps.executeUpdate();
 
                 if (numFAfectadas>0){
                     respuestaRegistro="Registro exitoso.";

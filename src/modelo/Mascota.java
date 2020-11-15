@@ -13,7 +13,7 @@ public class Mascota {
     int edad;
     String observaciones;
     int idHistoriaClinica;
-    int carnetVacunacionIdCarnetVacunacion;
+    int carnetVacunacionIdCarnet;
     
     public Mascota(){
         idMascota=0;
@@ -26,7 +26,7 @@ public class Mascota {
         edad=0;
         observaciones="";
         idHistoriaClinica=0;
-        carnetVacunacionIdCarnetVacunacion=0;
+        carnetVacunacionIdCarnet=0;
     }
 
     public int getIdMascota() {
@@ -110,12 +110,18 @@ public class Mascota {
     }
 
     public int getCarnetVacunacionIdCarnetVacunacion() {
-        return carnetVacunacionIdCarnetVacunacion;
+        return carnetVacunacionIdCarnet;
     }
 
-    public void setCarnetVacunacionIdCarnetVacunacion(int carnetVacunacionIdCarnetVacunacion) {
-        this.carnetVacunacionIdCarnetVacunacion = carnetVacunacionIdCarnetVacunacion;
+    public void setCarnetVacunacionIdCarnetVacunacion(int carnetVacunacionIdCarnet) {
+        this.carnetVacunacionIdCarnet = carnetVacunacionIdCarnet;
     }
+  
+    
+    
+    
+    
+    
     
     
 }
