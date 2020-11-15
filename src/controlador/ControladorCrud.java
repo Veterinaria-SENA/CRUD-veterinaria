@@ -42,7 +42,7 @@ public class ControladorCrud implements ActionListener {
         modeloT.addColumn("edad");
         modeloT.addColumn("observaciones");
         modeloT.addColumn("idHistoriaClinica");
-        modeloT.addColumn("idVacunacion");
+        modeloT.addColumn("carnetVacunacionidCarnet");
         
         Object[] columna = new Object [11];
        
@@ -58,7 +58,7 @@ public class ControladorCrud implements ActionListener {
             columna[7] = modeloCRUD.listMascota().get(i).getEdad();
             columna[8] = modeloCRUD.listMascota().get(i).getObservaciones();
             columna[9] = modeloCRUD.listMascota().get(i).getIdHistoriaClinica();
-            columna[10] = modeloCRUD.listMascota().get(i).getCarnetVacunacionIdCarnetVacunacion();
+            columna[10] = modeloCRUD.listMascota().get(i).getCarnetVacunacionIdCarnet();
             modeloT.addRow(columna);
         }
         
@@ -173,11 +173,10 @@ public class ControladorCrud implements ActionListener {
     Espacio para   código de tabla
     */
      /*-----------------------------------FIN CARNET VACUNACION--------------------------------------------------------------------- */ 
+     
     
     
-    
-    
-    
+
     
     /*-----------------------------------------INICIO VACUNA--------------------------------------------------------------- */ 
     /*

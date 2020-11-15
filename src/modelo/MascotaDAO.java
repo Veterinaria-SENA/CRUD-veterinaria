@@ -10,7 +10,7 @@ public class MascotaDAO {
         conexion = new Conexion();
     } 
     
-    public String insertMascota(int idMascota, int idPropietario, String nombre, String tipo, String raza, String color, float peso, int edad, String observaciones,int idHistoriaClinica,int carnetVacunacionIdCarnetVacunacion){
+    public String insertMascota(int idMascota, int idPropietario, String nombre, String tipo, String raza, String color, float peso, int edad, String observaciones,int idHistoriaClinica,int carnetVacunacionIdCarnet){
     
         String respuestaRegistro=null;
         
@@ -20,9 +20,9 @@ public class MascotaDAO {
             if(accesoDB != null) {
                 PreparedStatement ps = accesoDB.prepareStatement(""
                         + "INSERT INTO mascota "
-                        + "(id_propietario, nombre, tipo, raza, color, peso, edad, observaciones, id_historia_clinica, carnet_vacunacion_id_carnet_vacunacion)"
+                        + "(id_propietario, nombre, tipo, raza, color, peso, edad, observaciones, id_historia_clinica, carnet_vacunacion_id_carnet)"
                         + "VALUES (?,?,?,?,?,?,?,?,?,?)");
-                //ps.setInt(1, idMascota); la base de datos llena los id autoincrement,
+                ps.setInt(1, idMascota);
                 ps.setInt(1, idPropietario);// verificar si se deja autoincremet o debe ser de tipo string (cedula dueño)
                 ps.setString(2, nombre);
                 ps.setString(3, tipo);
@@ -32,7 +32,7 @@ public class MascotaDAO {
                 ps.setInt(7, edad);
                 ps.setString(8, observaciones);
                 ps.setInt(9, idHistoriaClinica);
-                ps.setInt(10, carnetVacunacionIdCarnetVacunacion);
+                ps.setInt(10, carnetVacunacionIdCarnet);
                        
                         
                 CallableStatement cs = accesoDB.prepareCall("{call ap_insertMascota(?,?,?,?,?,?,?,?,?,?,?)}" );
@@ -46,7 +46,7 @@ public class MascotaDAO {
                 cs.setInt(8, edad);
                 cs.setString(9, observaciones);
                 cs.setInt(10, idHistoriaClinica);
-                cs.setInt(11, carnetVacunacionIdCarnetVacunacion);
+                cs.setInt(11, carnetVacunacionIdCarnet);
 
                 //int numFAfectadas=cs.executeUpdate();
                 int numFAfectadas = ps.executeUpdate();
@@ -85,15 +85,50 @@ public class MascotaDAO {
                 mascota.setEdad(rs.getInt(8));
                 mascota.setObservaciones(rs.getString(9));
                 mascota.setIdHistoriaClinica(rs.getInt(10));
-                mascota.setCarnetVacunacionIdCarnetVacunacion(rs.getInt(11));
+                mascota.setCarnetVacunacionIdCarnet(rs.getInt(11));
                 
             }
         }
         catch (Exception e) {
         }
-        return listaMascota;        
+        return listaMascota;     
+        
     }
-}    
+
+    /*
+    public int editarMascota(int idMascota, int idPropietario, String nombre, String tipo, String raza, String color, float peso, int edad, String observaciones,int idHistoriaClinica,int carnetVacunacionIdCarnet){
+        int numFAfectadas = 0;
+        try {
+            Connection accesoDB = conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("{call ap-editarMascota(?,?,?,?,?,?,?,?,?,?,?)}");
+                cs.setInt(1, idMascota);
+                cs.setInt(2, idPropietario);
+                cs.setString(3, nombre);
+                cs.setString(4, tipo);
+                cs.setString(5, raza);
+                cs.setString(6, color);
+                cs.setFloat(7, peso);
+                cs.setInt(8, edad);
+                cs.setString(9, observaciones);
+                cs.setInt(10, idHistoriaClinica);
+                cs.setInt(11, carnetVacunacionIdCarnet);
+                
+                numFAfectadas = cs.executeUpdate ();
+            }
+            catch (Exception e);{
+                 return numFAfectadas;
+            }
+    }       */
+    
+    
+
+    
+}
+    
+    
+    
+    
+    
     
     
 

@@ -109,11 +109,11 @@ public class Mascota {
         this.idHistoriaClinica = idHistoriaClinica;
     }
 
-    public int getCarnetVacunacionIdCarnetVacunacion() {
+    public int getCarnetVacunacionIdCarnet() {
         return carnetVacunacionIdCarnet;
     }
 
-    public void setCarnetVacunacionIdCarnetVacunacion(int carnetVacunacionIdCarnet) {
+    public void setCarnetVacunacionIdCarnet(int carnetVacunacionIdCarnet) {
         this.carnetVacunacionIdCarnet = carnetVacunacionIdCarnet;
     }
   

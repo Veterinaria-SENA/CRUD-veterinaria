@@ -9,6 +9,6 @@ package modelo;
  *
  * @author ASUS
  */
-public class EspecialiadHasVeterinarioDAO {
+public class VeterinarioHasEspecialiadDAO {
     
 }
