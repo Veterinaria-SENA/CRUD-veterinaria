@@ -230,27 +230,27 @@ public class JFVeterinario extends javax.swing.JFrame {
     }//GEN-LAST:event_txCorreoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-       VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-     ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-     control.editarVeterinario();
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.editarVeterinario();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-     VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-     ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-     control.llenarTabla(listVeterinario);
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.llenarTabla(listVeterinario);
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-      VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-     ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-     control.guardarVeterinario(evt);
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.guardarVeterinario(evt);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-          VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-     ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-     control.eliminarVeterinario();
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.eliminarVeterinario();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**

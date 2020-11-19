@@ -3,45 +3,33 @@ package modelo;
 
 
 public class Mascota {
-    int idMascota;
-    int idPropietario;
-    String nombre;
-    String tipo;
-    String raza;
-    String color;
-    float peso;
-    int edad;
-    String observaciones;
-    int idHistoriaClinica;
-    int carnetVacunacionIdCarnet;
+    private String idMascota;
+    private String idPropietario;
+    private String nombre;
+    private String tipo;
+    private String raza;
+    private String color;
+    private String peso;
+    private String edad;
+    private String observaciones;
     
+   
     public Mascota(){
-        idMascota=0;
-        idPropietario=0;
-        nombre="";
-        tipo="";
-        raza="";
-        color="";
-        peso=0;
-        edad=0;
-        observaciones="";
-        idHistoriaClinica=0;
-        carnetVacunacionIdCarnet=0;
     }
 
-    public int getIdMascota() {
+    public String getIdMascota() {
         return idMascota;
     }
 
-    public void setIdMascota(int idMascota) {
+    public void setIdMascota(String idMascota) {
         this.idMascota = idMascota;
     }
 
-    public int getIdPropietario() {
+    public String getIdPropietario() {
         return idPropietario;
     }
 
-    public void setIdPropietario(int idPropietario) {
+    public void setIdPropietario(String idPropietario) {
         this.idPropietario = idPropietario;
     }
 
@@ -77,19 +65,19 @@ public class Mascota {
         this.color = color;
     }
 
-    public float getPeso() {
+    public String getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
+    public void setPeso(String peso) {
         this.peso = peso;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
 
@@ -100,28 +88,4 @@ public class Mascota {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-
-    public int getIdHistoriaClinica() {
-        return idHistoriaClinica;
-    }
-
-    public void setIdHistoriaClinica(int idHistoriaClinica) {
-        this.idHistoriaClinica = idHistoriaClinica;
-    }
-
-    public int getCarnetVacunacionIdCarnet() {
-        return carnetVacunacionIdCarnet;
-    }
-
-    public void setCarnetVacunacionIdCarnet(int carnetVacunacionIdCarnet) {
-        this.carnetVacunacionIdCarnet = carnetVacunacionIdCarnet;
-    }
-  
-    
-    
-    
-    
-    
-    
-    
 }

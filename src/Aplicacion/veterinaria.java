@@ -1,5 +1,5 @@
 
-package veterinaria;
+package Aplicacion;
 import modelo.*;
 import vista.*;
 import controlador.*;
@@ -10,7 +10,7 @@ public class veterinaria {
     public static void main(String [] args){
         JFMascota vistaC= new JFMascota();
         MascotaDAO modeloC = new MascotaDAO();
-        ControladorCrud controlaC= new ControladorCrud(vistaC, modeloC);
+        ControladorMascota controlaC= new ControladorMascota(vistaC, modeloC);
         
         vistaC.setVisible(true);
         vistaC.setLocationRelativeTo(null);
