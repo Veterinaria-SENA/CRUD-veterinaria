@@ -69,7 +69,7 @@ public class ControladorMascota {
             String edad = vistaCRUD.txtEdad.getText();
             String observaciones = vistaCRUD.txtObservaciones.getText();
 
-            String respuestaRegistro = modeloCRUD.insertarMascota(idPropietario, nombre, tipo, raza, color,peso,edad,observaciones);
+            String respuestaRegistro = modeloCRUD.RegistrarMascota(idPropietario, nombre, tipo, raza, color,peso,edad,observaciones);
             
             if (respuestaRegistro!=null){
                 JOptionPane.showMessageDialog(null, respuestaRegistro);

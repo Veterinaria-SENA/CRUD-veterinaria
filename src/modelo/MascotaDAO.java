@@ -9,8 +9,8 @@ public class MascotaDAO {
     public MascotaDAO(){
         conexion = new Conexion();
     } 
-/*  OJOOOOOOOOOOOO   CONVERTIR STRINGS */
-    public String insertarMascota(String idPropietario, String nombre, String tipo, String raza, String color, String peso, String edad, String observaciones){
+
+    public String RegistrarMascota(String idPropietario, String nombre, String tipo, String raza, String color, String peso, String edad, String observaciones){
         String respuestaRegistro=null;
         try{
             Connection accesoDB = conexion.getConexion();
