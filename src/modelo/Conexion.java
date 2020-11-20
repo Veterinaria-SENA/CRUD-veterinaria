@@ -15,8 +15,8 @@ public class Conexion {
         
         try{
               MysqlDataSource dataSource = new MysqlDataSource();
-             dataSource.setUser("root");
-             dataSource.setPassword("Bunker12345");
+             dataSource.setUser("usuario2026591");
+             dataSource.setPassword("usuario2026591");
             dataSource.setServerName("localhost");
             dataSource.setPort(3306);
             dataSource.setDatabaseName("clinicavet");

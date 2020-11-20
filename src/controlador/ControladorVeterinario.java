@@ -13,20 +13,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author wilso
- */
-public class ControladorVeterinario{
+
+public class ControladorVeterinario {
     
     JFVeterinario vistaCrud = new JFVeterinario();
     VeterinarioDAO modeloCRUD = new VeterinarioDAO();
     
     public ControladorVeterinario(JFVeterinario vistaCrud,VeterinarioDAO modeloCRUD){
         this.modeloCRUD = modeloCRUD;
-        this.vistaCrud = vistaCrud;
-        
-        
+        this.vistaCrud = vistaCrud;        
     }
     
     public void InicializarCrud(){ 
@@ -112,17 +107,16 @@ public class ControladorVeterinario{
     
     
     public void eliminarVeterinario(){
-            String id = vistaCrud.txId.getText();
-             
-               
-               String rptaRegistro = modeloCRUD.eliminarveterinario(id );
-               
-               if (rptaRegistro!=null){
-                   JOptionPane.showMessageDialog(null,rptaRegistro);
-               } else{
-                   JOptionPane.showMessageDialog(null,"Registro Erroneo.");
-               }
-                 llenarTabla(vistaCrud.listVeterinario);
+        String id = vistaCrud.txId.getText();
+        String rptaRegistro = modeloCRUD.eliminarveterinario(id);
+
+        if (rptaRegistro!=null){
+            JOptionPane.showMessageDialog(null,rptaRegistro);
+        } else {
+            JOptionPane.showMessageDialog(null,"Registro Erroneo.");
+        }
+
+        llenarTabla(vistaCrud.listVeterinario);
     }
     
 }

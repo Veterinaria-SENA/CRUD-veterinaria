@@ -7,10 +7,7 @@ package modelo;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- *
- * @author wilso
- */
+
 public class VeterinarioDAO {
     Conexion conexion;
     
