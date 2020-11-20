@@ -101,4 +101,8 @@ public class ConsultaDAO {
            
         return listaconsulta; 
     }
+
+    public ArrayList<Consulta> listconsulta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

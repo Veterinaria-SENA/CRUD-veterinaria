@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.ControladorConsulta;
+import java.sql.Date;
 import modelo.ConsultaDAO;
 /**
  *
@@ -295,4 +296,14 @@ public class JFConsulta extends javax.swing.JFrame {
     public javax.swing.JTextField txid_tipo_consulta;
     public javax.swing.JTextField txid_veterinario;
     // End of variables declaration//GEN-END:variables
+
+    public class txfecha {
+
+        public static Date getText() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public txfecha() {
+        }
+    }
 }
