@@ -93,7 +93,7 @@ public class ControladorConsulta{
     
     public void editarConsulta(){
             String id = vistaCrud.txId.getText();
-         String id = vistaCrud.txId.getText();
+      
                String id_historia_clinica = vistaCrud.txid_historia_clinica.getText();
                String id_veterinario = vistaCrud.txid_veterinario.getText();
                Date fecha = vistaCrud.txfecha.getText();
