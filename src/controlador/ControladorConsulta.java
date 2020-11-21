@@ -47,7 +47,7 @@ public class ControladorConsulta{
             
          Object[] Columna = new Object [9];
          
-         ArrayList<Consulta> listaConsulta=modeloCRUD.listconsulta();
+         ArrayList<Consulta> listaConsulta=modeloCRUD.listveterinario();
          int numRegistro =listaConsulta.size();
          
          for (int i = 0; i < numRegistro; i++){

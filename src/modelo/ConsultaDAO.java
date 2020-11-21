@@ -36,6 +36,7 @@ public class ConsultaDAO {
                 rptaRegistro="registro exitoso";
             }
         } catch (Exception e){
+            e.printStackTrace();
         }
         return rptaRegistro;
     }
@@ -77,7 +78,7 @@ public class ConsultaDAO {
         return rptaRegistro;
     }
        
-    public ArrayList<Veterinario> listveterinario(){
+    public ArrayList<Consulta> listveterinario(){
         ArrayList listaconsulta = new ArrayList();
          Consulta consulta;
          try {
@@ -102,7 +103,5 @@ public class ConsultaDAO {
         return listaconsulta; 
     }
 
-    public ArrayList<Consulta> listconsulta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 }
