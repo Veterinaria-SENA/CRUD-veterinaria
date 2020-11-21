@@ -70,7 +70,7 @@ public class ControladorConsulta{
                String id = vistaCrud.txId.getText();
                String id_historia_clinica = vistaCrud.txid_historia_clinica.getText();
                String id_veterinario = vistaCrud.txid_veterinario.getText();
-               Date fecha = vistaCrud.txfecha.getText();
+               Date fecha = new Date(vistaCrud.txFecha.getDate().getTime());
                String id_tipo_consulta = vistaCrud.txid_tipo_consulta.getText();
                String diagnostico = vistaCrud.txdiagnostico.getText();
                
@@ -83,6 +83,7 @@ public class ControladorConsulta{
                    JOptionPane.showMessageDialog(null,"Registro Erroneo.");
                    
                }
+                llenarTabla(vistaCrud.listConsulta);
             if (e.getSource()== vistaCrud.btnListar){
                     llenarTabla(vistaCrud.listConsulta);
             }       
@@ -96,7 +97,7 @@ public class ControladorConsulta{
       
                String id_historia_clinica = vistaCrud.txid_historia_clinica.getText();
                String id_veterinario = vistaCrud.txid_veterinario.getText();
-               Date fecha = vistaCrud.txfecha.getText();
+                Date fecha = new Date(vistaCrud.txFecha.getDate().getTime());
                String id_tipo_consulta = vistaCrud.txid_tipo_consulta.getText();
                String diagnostico = vistaCrud.txdiagnostico.getText();
                
