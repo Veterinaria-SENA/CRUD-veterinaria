@@ -78,9 +78,9 @@ public class ControladorCarnet {
             JOptionPane.showMessageDialog(null, rptaRegistro);
         } else {
             JOptionPane.showMessageDialog(null, "Registro Erroneo.");
-
         }
-          llenarTabla(vistaCrud.tableCarnets);
+        
+        llenarTabla(vistaCrud.tableCarnets);
     }
 
     public void editarCarnet() {

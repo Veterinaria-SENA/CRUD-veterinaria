@@ -11,15 +11,15 @@ public class HistoriaClinicaDAO {
         conexion = new Conexion();
     }
     
-    public String RegistrarHistoriaClinica(String idMascota, String fechaApertura) {
+    public String RegistrarHistoriaClinica(int idMascota, Date fechaApertura) {
         String respuestaRegistro=null;
         
         try {
             Connection accesoDB = conexion.getConexion();
             String SQL_INSERT = "INSERT INTO historia_clinica (id_mascota, fecha_apertura) VALUES (?,?)";
             PreparedStatement ps = accesoDB.prepareStatement (SQL_INSERT);
-            ps.setInt(1, Integer.parseInt(idMascota));
-            ps.setString(2, fechaApertura);
+            ps.setInt(1, idMascota);
+            ps.setDate(2, fechaApertura);
 
             int numFAfectadas = ps.executeUpdate();
             if (numFAfectadas>0){
@@ -35,16 +35,16 @@ public class HistoriaClinicaDAO {
         return respuestaRegistro;
     }
       
-    public String editarHistoriaClinica(String idHistoriaClinica, String idMascota, String fechaApertura) {
+    public String editarHistoriaClinica(int idHistoriaClinica, int idMascota, Date fechaApertura) {
         String respuestaRegistro=null;
 
         try {
             Connection accesoDB = conexion.getConexion();
             String SQL_INSERT = "update historia_clinica set id_historia_clinica=?,fechaApertura=? where id_historia_clinica=?";
             PreparedStatement ps = accesoDB.prepareStatement(SQL_INSERT);
-            ps.setInt(1, Integer.parseInt(idMascota));
-            ps.setString(2, fechaApertura);
-            ps.setInt(3, Integer.parseInt(idHistoriaClinica));
+            ps.setInt(1, idMascota);
+            ps.setDate(2, fechaApertura);
+            ps.setInt(3, idHistoriaClinica);
             
             int numAfectadas = ps.executeUpdate();
             if(numAfectadas>0){
@@ -55,13 +55,13 @@ public class HistoriaClinicaDAO {
         return respuestaRegistro;
     }    
 
-    public String eliminarHistoriaClinica(String idHistoriaClinica) {
+    public String eliminarHistoriaClinica(int idHistoriaClinica) {
         String respuestaRegistro = null;
         try {
             Connection accesoDB = conexion.getConexion();
             String SQL_INSERT = "delete from historia_clinica where id_historia_clinica=?";
             PreparedStatement ps = accesoDB.prepareStatement(SQL_INSERT);
-            ps.setInt(1, Integer.parseInt(idHistoriaClinica));
+            ps.setInt(1, idHistoriaClinica);
             
             int numAfectadas = ps.executeUpdate();
             if (numAfectadas>0) {
@@ -71,8 +71,7 @@ public class HistoriaClinicaDAO {
         }
         return respuestaRegistro;
     }     
-   
-        
+
     public ArrayList<HistoriaClinica> listaHistoriaClinica(){
         ArrayList listaHistoriaClinica = new ArrayList();
         HistoriaClinica historiaclinica;

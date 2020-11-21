@@ -30,7 +30,6 @@ public class JFConsulta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jCalendar2 = new com.toedter.calendar.JCalendar();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,7 +40,6 @@ public class JFConsulta extends javax.swing.JFrame {
         txId = new javax.swing.JTextField();
         txid_historia_clinica = new javax.swing.JTextField();
         txid_veterinario = new javax.swing.JTextField();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         txid_tipo_consulta = new javax.swing.JTextField();
         txdiagnostico = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
@@ -112,10 +110,9 @@ public class JFConsulta extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txid_historia_clinica)
+                    .addComponent(txid_historia_clinica, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                     .addComponent(txId)
                     .addComponent(txid_veterinario)
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txid_tipo_consulta)
                     .addComponent(txdiagnostico))
                 .addGap(97, 97, 97)
@@ -151,9 +148,7 @@ public class JFConsulta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel4))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(btnListar)))
@@ -206,32 +201,27 @@ public class JFConsulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
-              ConsultaDAO modeloCRUD = new ConsultaDAO();
-     ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-     control.guardarConsulta(evt);
-        
+        ConsultaDAO modeloCRUD = new ConsultaDAO();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.guardarConsulta(evt);     
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
         ConsultaDAO modeloCRUD = new ConsultaDAO();
-     ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-     control.eliminarConsulta();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.eliminarConsulta();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-          ConsultaDAO modeloCRUD = new ConsultaDAO();
-     ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-     control.editarConsulta();
+        ConsultaDAO modeloCRUD = new ConsultaDAO();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.editarConsulta();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        // TODO add your handling code here:
-         ConsultaDAO modeloCRUD = new ConsultaDAO();
-     ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-     control.llenarTabla(listConsulta);
+        ConsultaDAO modeloCRUD = new ConsultaDAO();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.llenarTabla(listConsulta);
     }//GEN-LAST:event_btnListarActionPerformed
 
    /**
@@ -279,8 +269,6 @@ public class JFConsulta extends javax.swing.JFrame {
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnListar;
     public javax.swing.JButton btnRegistrar;
-    private com.toedter.calendar.JCalendar jCalendar1;
-    private com.toedter.calendar.JCalendar jCalendar2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -297,13 +285,4 @@ public class JFConsulta extends javax.swing.JFrame {
     public javax.swing.JTextField txid_veterinario;
     // End of variables declaration//GEN-END:variables
 
-    public class txfecha {
-
-        public static Date getText() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        public txfecha() {
-        }
-    }
 }

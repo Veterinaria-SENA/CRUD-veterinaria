@@ -21,7 +21,6 @@ public class CarnetVacunacionDAO {
 
     public CarnetVacunacionDAO() {
         conexion = new Conexion();
-
     }
 
     public String insertCarnet(int id_carnet, int id_mascota, int id_vacuna, Date fecha, String observaciones) {

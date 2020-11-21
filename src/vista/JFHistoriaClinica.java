@@ -31,7 +31,7 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaHistoriaClinica = new javax.swing.JTable();
-        txtFechaApertura = new javax.swing.JFormattedTextField();
+        txtFechaApertura = new org.jdesktop.swingx.JXDatePicker();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -119,9 +119,6 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaHistoriaClinica);
 
-        txtFechaApertura.setBackground(new java.awt.Color(255, 255, 255));
-        txtFechaApertura.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -141,9 +138,9 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(26, 26, 26)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtIdMascota, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                            .addComponent(txtIdMascota)
                             .addComponent(txtIdHistoriaClinica)
-                            .addComponent(txtFechaApertura))
+                            .addComponent(txtFechaApertura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -151,14 +148,15 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
                             .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnListar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 19, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminar)
@@ -178,9 +176,9 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(txtIdMascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(txtFechaApertura))))
+                            .addComponent(txtFechaApertura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -200,17 +198,11 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         HistoriaClinicaDAO modeloCRUD = new HistoriaClinicaDAO();
         ControladorHistoriaClinica control = new ControladorHistoriaClinica(this, modeloCRUD);
-        control.registrarHistoriaClinica(evt); 
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        HistoriaClinicaDAO modeloCRUD = new HistoriaClinicaDAO();
-        ControladorHistoriaClinica control = new ControladorHistoriaClinica(this, modeloCRUD);
-        control.eliminarHistoriaClinica();
-    }//GEN-LAST:event_btnEliminarActionPerformed
+        control.editarHistoriaClinica();
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         HistoriaClinicaDAO modeloCRUD = new HistoriaClinicaDAO();
@@ -218,11 +210,17 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
         control.llenarTabla(tablaHistoriaClinica);
     }//GEN-LAST:event_btnListarActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         HistoriaClinicaDAO modeloCRUD = new HistoriaClinicaDAO();
         ControladorHistoriaClinica control = new ControladorHistoriaClinica(this, modeloCRUD);
-        control.editarHistoriaClinica();
-    }//GEN-LAST:event_btnEditarActionPerformed
+        control.eliminarHistoriaClinica();
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        HistoriaClinicaDAO modeloCRUD = new HistoriaClinicaDAO();
+        ControladorHistoriaClinica control = new ControladorHistoriaClinica(this, modeloCRUD);
+        control.registrarHistoriaClinica(evt);
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,7 +269,7 @@ public class JFHistoriaClinica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tablaHistoriaClinica;
-    public javax.swing.JFormattedTextField txtFechaApertura;
+    public org.jdesktop.swingx.JXDatePicker txtFechaApertura;
     public javax.swing.JTextField txtIdHistoriaClinica;
     public javax.swing.JTextField txtIdMascota;
     // End of variables declaration//GEN-END:variables

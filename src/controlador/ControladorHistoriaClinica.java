@@ -6,20 +6,20 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
+// import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.sql.Date;
 
 
-public class ControladorHistoriaClinica {
-    
+public class ControladorHistoriaClinica { 
     JFHistoriaClinica vistaCRUD = new JFHistoriaClinica();
     HistoriaClinicaDAO modeloCRUD =new HistoriaClinicaDAO();
     
     public ControladorHistoriaClinica (JFHistoriaClinica vistaCRUD, HistoriaClinicaDAO modeloCRUD) {
         this.modeloCRUD = modeloCRUD;
-        this.vistaCRUD= vistaCRUD;
+        this.vistaCRUD = vistaCRUD;
     }
     
     public void InicializarCrud(){
@@ -47,20 +47,11 @@ public class ControladorHistoriaClinica {
     }  
     
     public void registrarHistoriaClinica(ActionEvent e) {
-       if (e.getSource()== vistaCRUD.btnRegistrar){
-            String idMascota = vistaCRUD.txtIdMascota.getText();
-            String idPropietario = vistaCRUD.txtFechaApertura.getText();
-            String fechaApertura = vistaCRUD.txtFechaApertura.getText();
-            DateFormat format = DateFormat.getDateInstance();;
-            Date d;
+        if (e.getSource()== vistaCRUD.btnRegistrar){
+            int idMascota = Integer.parseInt(vistaCRUD.txtIdMascota.getText());
+            Date fechaApertura = new Date(vistaCRUD.txtFechaApertura.getDate().getTime());
 
-            try {
-                d = format.parse(fechaApertura);
-            } catch (ParseException pe) {
-                d = new Date();
-            }
-
-            String respuestaRegistro = modeloCRUD.RegistrarHistoriaClinica(idMascota, d.toString());
+            String respuestaRegistro = modeloCRUD.RegistrarHistoriaClinica(idMascota, fechaApertura);
 
             if (respuestaRegistro!=null) {
                 JOptionPane.showMessageDialog(null, respuestaRegistro);
@@ -69,29 +60,19 @@ public class ControladorHistoriaClinica {
                 JOptionPane.showMessageDialog(null,"Registro Erróneo.");
             }
 
-            if(e.getSource()==vistaCRUD.btnRegistrar){
-                llenarTabla(vistaCRUD.tablaHistoriaClinica);
-            }
-       }
+            llenarTabla(vistaCRUD.tablaHistoriaClinica);
+        }
     }
      
     public void editarHistoriaClinica(){
-        String idHistoriaClinica = vistaCRUD.txtIdHistoriaClinica.getText();
-        String idMascota = vistaCRUD.txtIdMascota.getText();
-        String fechaApertura = vistaCRUD.txtFechaApertura.getText();
-        DateFormat format = DateFormat.getDateInstance();;
-        Date d;
-        
-        try {
-            d = format.parse(fechaApertura);
-        } catch (ParseException pe) {
-            d = new Date();
-        }
+        int idHistoriaClinica = Integer.parseInt(vistaCRUD.txtIdHistoriaClinica.getText());
+        int idMascota = Integer.parseInt(vistaCRUD.txtIdMascota.getText());
+        Date fechaApertura = new Date(vistaCRUD.txtFechaApertura.getDate().getTime());
 
         String respuestaRegistro = modeloCRUD.editarHistoriaClinica(
-                idHistoriaClinica,
-                idMascota,
-                d.toString()
+            idHistoriaClinica,
+            idMascota,
+            fechaApertura
         );
 
         if (respuestaRegistro!=null){
@@ -102,10 +83,9 @@ public class ControladorHistoriaClinica {
         
         llenarTabla(vistaCRUD.tablaHistoriaClinica);
     }
-
     
     public void eliminarHistoriaClinica(){
-        String idHistoriaClinica = vistaCRUD.txtIdHistoriaClinica.getText();
+        int idHistoriaClinica = Integer.parseInt(vistaCRUD.txtIdHistoriaClinica.getText());
         String respuestaRegistro = modeloCRUD.eliminarHistoriaClinica(idHistoriaClinica);
 
         if (respuestaRegistro!=null){
@@ -115,5 +95,5 @@ public class ControladorHistoriaClinica {
         }
 
         llenarTabla(vistaCRUD.tablaHistoriaClinica);
-    }        
+    }
 }
