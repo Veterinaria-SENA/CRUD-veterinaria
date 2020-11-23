@@ -3,11 +3,13 @@ package vista;
 
 
 import controlador.ControladorMascota;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 import modelo.Mascota;
 import modelo.MascotaDAO;
+import clases.validaciones;
 
 
 public class JFMascota extends javax.swing.JFrame {
@@ -54,6 +56,7 @@ public class JFMascota extends javax.swing.JFrame {
         btnDatosPropietario = new javax.swing.JButton();
         btnVolver2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        jLerror = new javax.swing.JLabel();
 
         btnVolver.setBackground(new java.awt.Color(0, 153, 153));
         btnVolver.setText("Volver al inicio");
@@ -68,62 +71,88 @@ public class JFMascota extends javax.swing.JFrame {
         jPasswordField1.setText("jPasswordField1");
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("FORMULARIO PROPIETARIO");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("id mascota");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("id propietario");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("nombre");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("tipo");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("raza");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("color");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("peso");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("edad");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("observaciones");
 
-        txtIdMascota.setBackground(new java.awt.Color(255, 255, 255));
         txtIdMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdMascotaActionPerformed(evt);
             }
         });
+        txtIdMascota.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIdMascotaKeyPressed(evt);
+            }
+        });
 
-        txtIdPropietario.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdPropietario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtIdPropietarioKeyPressed(evt);
+            }
+        });
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
 
-        txtTipo.setBackground(new java.awt.Color(255, 255, 255));
+        txtTipo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTipoKeyPressed(evt);
+            }
+        });
 
-        txtRaza.setBackground(new java.awt.Color(255, 255, 255));
+        txtRaza.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtRazaKeyPressed(evt);
+            }
+        });
 
-        txtColor.setBackground(new java.awt.Color(255, 255, 255));
+        txtColor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtColorKeyPressed(evt);
+            }
+        });
 
-        txtEdad.setBackground(new java.awt.Color(255, 255, 255));
+        txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEdadKeyPressed(evt);
+            }
+        });
 
-        txtPeso.setBackground(new java.awt.Color(255, 255, 255));
+        txtPeso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPesoKeyPressed(evt);
+            }
+        });
 
-        txtObservaciones.setBackground(new java.awt.Color(255, 255, 255));
+        txtObservaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtObservacionesKeyPressed(evt);
+            }
+        });
 
         tablaMascota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -192,18 +221,21 @@ public class JFMascota extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("FORMULARIO MASCOTA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrar)
+                .addGap(205, 205, 205))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnHistoriaClinica)
@@ -212,6 +244,7 @@ public class JFMascota extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel12)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel1)
@@ -233,8 +266,7 @@ public class JFMascota extends javax.swing.JFrame {
                                             .addComponent(txtRaza)
                                             .addComponent(txtColor)
                                             .addComponent(txtEdad)
-                                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel12)))
+                                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -242,12 +274,11 @@ public class JFMascota extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnEliminar)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnVolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(jLerror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegistrar)
-                .addGap(205, 205, 205))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +287,7 @@ public class JFMascota extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnVolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnHistoriaClinica)
@@ -301,12 +332,14 @@ public class JFMascota extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addGap(18, 18, 18)
                         .addComponent(btnRegistrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnListar)
-                            .addComponent(btnEditar)
-                            .addComponent(btnEliminar))
-                        .addGap(18, 18, 18)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)))
+                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnListar)
+                    .addComponent(btnEditar)
+                    .addComponent(btnEliminar))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -326,9 +359,13 @@ public class JFMascota extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        MascotaDAO modeloCRUD = new MascotaDAO();
-        ControladorMascota control= new ControladorMascota(this, modeloCRUD);
-        control.registrarMascota(evt);
+         validaciones validar= new validaciones();
+        if (validar.validacion(this)==true)
+        {
+            MascotaDAO modeloCRUD = new MascotaDAO();
+            ControladorMascota control= new ControladorMascota(this, modeloCRUD);
+            control.registrarMascota(evt);
+        }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt){
@@ -338,9 +375,13 @@ public class JFMascota extends javax.swing.JFrame {
     }
             
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        MascotaDAO modeloCRUD = new MascotaDAO();
-        ControladorMascota control= new ControladorMascota(this, modeloCRUD);
-        control.editarMascota();
+         validaciones validar= new validaciones();
+        if (validar.validacion(this)==true)
+        {
+            MascotaDAO modeloCRUD = new MascotaDAO();
+            ControladorMascota control= new ControladorMascota(this, modeloCRUD);
+            control.editarMascota();
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnHistoriaClinicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoriaClinicaActionPerformed
@@ -376,6 +417,42 @@ public class JFMascota extends javax.swing.JFrame {
         frm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnDatosPropietarioActionPerformed
+
+    private void txtIdMascotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdMascotaKeyPressed
+        txtIdMascota.setBackground(Color.white);
+    }//GEN-LAST:event_txtIdMascotaKeyPressed
+
+    private void txtIdPropietarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdPropietarioKeyPressed
+        txtIdPropietario.setBackground(Color.white);
+    }//GEN-LAST:event_txtIdPropietarioKeyPressed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        txtNombre.setBackground(Color.white);
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void txtTipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTipoKeyPressed
+        txtTipo.setBackground(Color.white);
+    }//GEN-LAST:event_txtTipoKeyPressed
+
+    private void txtRazaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRazaKeyPressed
+        txtRaza.setBackground(Color.white);
+    }//GEN-LAST:event_txtRazaKeyPressed
+
+    private void txtColorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColorKeyPressed
+        txtColor.setBackground(Color.white);
+    }//GEN-LAST:event_txtColorKeyPressed
+
+    private void txtEdadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyPressed
+        txtEdad.setBackground(Color.white);
+    }//GEN-LAST:event_txtEdadKeyPressed
+
+    private void txtPesoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesoKeyPressed
+        txtPeso.setBackground(Color.white);
+    }//GEN-LAST:event_txtPesoKeyPressed
+
+    private void txtObservacionesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtObservacionesKeyPressed
+        txtObservaciones.setBackground(Color.white);
+    }//GEN-LAST:event_txtObservacionesKeyPressed
 /**/
     
      public void eliminardatosformulario()
@@ -495,6 +572,7 @@ public class JFMascota extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel jLerror;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
