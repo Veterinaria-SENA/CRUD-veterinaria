@@ -575,7 +575,7 @@ public class validaciones {
         boolean respuesta=false;
         for(int i=0;i<numRegistro;i++)
         {
-            if(usuario.equals(listaVeterinario.get (i).getNombre()+" "+listaVeterinario.get (i).getApellido()) && clave.equals(listaVeterinario.get (i).getCorreo()))
+            if(usuario.trim().equals(listaVeterinario.get (i).getCorreo().trim()) && clave.trim().equals(listaVeterinario.get (i).getTelefono().trim()))
             {
                 respuesta = true;
                 i=numRegistro;
