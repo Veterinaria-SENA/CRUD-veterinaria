@@ -6,11 +6,16 @@
 package clases;
 
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import vista.*;
-import modelo.*;
+import vista.JFCarnetVacunacion;
+import vista.JFConsulta;
+import vista.JFHistoriaClinica;
+import vista.JFMascota;
+import vista.JFPropietario;
+import vista.JFVeterinario;
+import vista.Login;
+
 /**
  *
  * @author DA5H
@@ -567,20 +572,12 @@ public class validaciones {
         }
         return respuesta;
     }
-    public boolean usuario(String usuario,String clave)
+    /*public boolean usuario(String usuario, String clave)
     {
-        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-        ArrayList<Veterinario> listaVeterinario=modeloCRUD.listveterinario();
-        int numRegistro =listaVeterinario.size();
-        boolean respuesta=false;
-        for(int i=0;i<numRegistro;i++)
-        {
-            if(usuario.equals(listaVeterinario.get (i).getNombre()+" "+listaVeterinario.get (i).getApellido()) && clave.equals(listaVeterinario.get (i).getCorreo()))
-            {
-                respuesta = true;
-                i=numRegistro;
-            }
-        }
-        return respuesta;
+        
     }
+    public boolean tipusuario(String usuario, String clave)
+    {
+    }*/
+    
 }
