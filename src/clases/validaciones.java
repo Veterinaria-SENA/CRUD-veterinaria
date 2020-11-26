@@ -320,7 +320,7 @@ public class validaciones {
                 vistaMascota.jLerror.setText("Por favor llenar la casilla peso solo con numeros");
                 respuesta=false;
             }
-            else if(alfabetico(vistaMascota.txtObservaciones.getText())==false)
+            else if(numerico(vistaMascota.txtObservaciones.getText())==false)
             {
                 vistaMascota.txtObservaciones.setBackground(Color.pink);
                 vistaMascota.jLerror.setText("Por favor llenar la casilla observaciones solo con letras");
