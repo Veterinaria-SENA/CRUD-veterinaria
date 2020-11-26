@@ -7,10 +7,8 @@ package vista;
 
 import controlador.ControladorCarnet;
 import controlador.ControladorVeterinario;
-import java.awt.Color;
 import modelo.CarnetVacunacionDAO;
 import modelo.VeterinarioDAO;
-import clases.validaciones;
 
 /**
  *
@@ -54,39 +52,33 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
         btnVolver3 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         volverHC = new javax.swing.JButton();
-        jLerror = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        JLcarnet.setForeground(new java.awt.Color(0, 0, 0));
         JLcarnet.setText("Id carnet");
 
+        jLmascota.setForeground(new java.awt.Color(0, 0, 0));
         jLmascota.setText("Id mascota");
 
+        jLvacuna.setForeground(new java.awt.Color(0, 0, 0));
         jLvacuna.setText("Id vacuna");
 
+        jLfecha.setForeground(new java.awt.Color(0, 0, 0));
         jLfecha.setText("Fecha");
 
+        jLobservaciones.setForeground(new java.awt.Color(0, 0, 0));
         jLobservaciones.setText("Observaciones");
 
-        txcarnet.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txcarnetKeyPressed(evt);
-            }
-        });
+        txcarnet.setBackground(new java.awt.Color(255, 255, 255));
 
-        txmascota.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txmascotaKeyPressed(evt);
-            }
-        });
+        txmascota.setBackground(new java.awt.Color(255, 255, 255));
 
-        txvacuna.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txvacunaKeyPressed(evt);
-            }
-        });
+        txvacuna.setBackground(new java.awt.Color(255, 255, 255));
+
+        txobservaciones.setBackground(new java.awt.Color(255, 255, 255));
 
         btnregistrar.setText("Registrar");
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +122,6 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tableCarnets);
 
         jDdateFecha.setBackground(new java.awt.Color(255, 255, 255));
-        jDdateFecha.setLinkPanel(null);
 
         btnVolver3.setBackground(new java.awt.Color(0, 153, 153));
         btnVolver3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/home.png"))); // NOI18N
@@ -141,6 +132,7 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("CARNET  DE VACUNACIÓN");
 
         volverHC.setText("volver");
@@ -165,12 +157,11 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
                                 .addComponent(btnVolver3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(125, 125, 125)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLobservaciones)
                                         .addGap(39, 39, 39)
                                         .addComponent(txobservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel12)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLvacuna, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,9 +174,7 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
                                             .addComponent(txcarnet, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txvacuna, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jDdateFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)))))
+                                    .addComponent(jLabel12))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
@@ -198,10 +187,10 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
                                 .addComponent(btneliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,9 +226,7 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
                     .addComponent(txobservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnregistrar)
-                .addGap(7, 7, 7)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(69, 69, 69)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnlistar)
                     .addComponent(btneditar)
@@ -264,39 +251,28 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
-        validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {
-            CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
-            ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
-            control.guardarCarnet();
-        }
-        else
-        {
-            
-        }
+         CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
+     ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
+     control.guardarCarnet();
+
     }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
-        validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {
-            CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
-            ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
-            control.editarCarnet();
-        }
+        CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
+     ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
+     control.editarCarnet();
     }//GEN-LAST:event_btneditarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
-        ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
-        control.eliminarCarnet();
+          CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
+     ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
+     control.eliminarCarnet();
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void btnlistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistarActionPerformed
-        CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
-        ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
-        control.llenarTabla(tableCarnets);
+       CarnetVacunacionDAO modeloCRUD = new CarnetVacunacionDAO();
+     ControladorCarnet control=new ControladorCarnet(this,modeloCRUD);
+     control.llenarTabla(tableCarnets);
     }//GEN-LAST:event_btnlistarActionPerformed
 
     private void btnVolver3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver3ActionPerformed
@@ -310,18 +286,6 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
         frm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_volverHCActionPerformed
-
-    private void txcarnetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcarnetKeyPressed
-        txcarnet.setBackground(Color.white);
-    }//GEN-LAST:event_txcarnetKeyPressed
-
-    private void txmascotaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txmascotaKeyPressed
-       txmascota.setBackground(Color.white);
-    }//GEN-LAST:event_txmascotaKeyPressed
-
-    private void txvacunaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txvacunaKeyPressed
-       txvacuna.setBackground(Color.white);
-    }//GEN-LAST:event_txvacunaKeyPressed
 
     /**
      * @param args the command line arguments
@@ -367,7 +331,6 @@ public class JFCarnetVacunacion extends javax.swing.JFrame {
     private javax.swing.JButton btnregistrar;
     public org.jdesktop.swingx.JXDatePicker jDdateFecha;
     private javax.swing.JLabel jLabel12;
-    public javax.swing.JLabel jLerror;
     private javax.swing.JLabel jLfecha;
     private javax.swing.JLabel jLmascota;
     private javax.swing.JLabel jLobservaciones;

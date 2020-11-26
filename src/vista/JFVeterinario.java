@@ -5,9 +5,7 @@
  */
 package vista;
 
-import clases.validaciones;
 import controlador.ControladorVeterinario;
-import java.awt.Color;
 import modelo.VeterinarioDAO;
 
 /**
@@ -53,7 +51,6 @@ public class JFVeterinario extends javax.swing.JFrame {
         btnListar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         btnVolver4 = new javax.swing.JButton();
-        jLerror = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listVeterinario = new javax.swing.JTable();
 
@@ -62,64 +59,43 @@ public class JFVeterinario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
         jPanel1.setForeground(new java.awt.Color(0, 153, 153));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("id");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Apellido");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Direccion");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Telefono");
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Celular");
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Correo");
 
-        txId.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txIdKeyPressed(evt);
-            }
-        });
+        txId.setBackground(new java.awt.Color(255, 255, 255));
 
-        txNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txNombreKeyPressed(evt);
-            }
-        });
+        txNombre.setBackground(new java.awt.Color(255, 255, 255));
 
-        txApellido.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txApellidoKeyPressed(evt);
-            }
-        });
+        txApellido.setBackground(new java.awt.Color(255, 255, 255));
 
-        txDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txDireccionKeyPressed(evt);
-            }
-        });
+        txDireccion.setBackground(new java.awt.Color(255, 255, 255));
 
-        txTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txTelefonoKeyPressed(evt);
-            }
-        });
+        txTelefono.setBackground(new java.awt.Color(255, 255, 255));
 
-        txCelular.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txCelularKeyPressed(evt);
-            }
-        });
+        txCelular.setBackground(new java.awt.Color(255, 255, 255));
 
+        txCorreo.setBackground(new java.awt.Color(255, 255, 255));
         txCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txCorreoActionPerformed(evt);
-            }
-        });
-        txCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txCorreoKeyPressed(evt);
             }
         });
 
@@ -152,6 +128,7 @@ public class JFVeterinario extends javax.swing.JFrame {
         });
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("PERSONAL VETERINARIO");
 
         btnVolver4.setBackground(new java.awt.Color(0, 153, 153));
@@ -167,6 +144,37 @@ public class JFVeterinario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txCorreo, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(txDireccion, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txId, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(4, 4, 4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(7, 7, 7)
                 .addComponent(btnListar)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,44 +188,11 @@ public class JFVeterinario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnVolver4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(95, 95, 95)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(32, 32, 32)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txCorreo, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txCelular, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txDireccion, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txId, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txApellido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(txTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addGap(4, 4, 4)))
-                    .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(7, Short.MAX_VALUE)
                 .addComponent(btnVolver4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
@@ -251,9 +226,7 @@ public class JFVeterinario extends javax.swing.JFrame {
                     .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(53, 53, 53)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListar)
                     .addComponent(btnGuardar)
@@ -301,13 +274,9 @@ public class JFVeterinario extends javax.swing.JFrame {
     }//GEN-LAST:event_txCorreoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {
-            VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-            ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-            control.editarVeterinario();
-        }
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.editarVeterinario();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -317,13 +286,9 @@ public class JFVeterinario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {    
-            VeterinarioDAO modeloCRUD = new VeterinarioDAO();
-            ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
-            control.guardarVeterinario(evt);
-        }
+        VeterinarioDAO modeloCRUD = new VeterinarioDAO();
+        ControladorVeterinario control=new ControladorVeterinario(this,modeloCRUD);
+        control.guardarVeterinario(evt);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -337,34 +302,6 @@ public class JFVeterinario extends javax.swing.JFrame {
         frm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnVolver4ActionPerformed
-
-    private void txIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txIdKeyPressed
-        txId.setBackground(Color.white);
-    }//GEN-LAST:event_txIdKeyPressed
-
-    private void txNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txNombreKeyPressed
-        txNombre.setBackground(Color.white);
-    }//GEN-LAST:event_txNombreKeyPressed
-
-    private void txApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txApellidoKeyPressed
-        txApellido.setBackground(Color.white);
-    }//GEN-LAST:event_txApellidoKeyPressed
-
-    private void txDireccionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txDireccionKeyPressed
-        txDireccion.setBackground(Color.white);
-    }//GEN-LAST:event_txDireccionKeyPressed
-
-    private void txTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txTelefonoKeyPressed
-        txTelefono.setBackground(Color.white);
-    }//GEN-LAST:event_txTelefonoKeyPressed
-
-    private void txCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txCelularKeyPressed
-        txCelular.setBackground(Color.white);
-    }//GEN-LAST:event_txCelularKeyPressed
-
-    private void txCorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txCorreoKeyPressed
-        txCorreo.setBackground(Color.white);
-    }//GEN-LAST:event_txCorreoKeyPressed
 
     /**
      * @param args the command line arguments
@@ -409,6 +346,8 @@ public class JFVeterinario extends javax.swing.JFrame {
     public javax.swing.JButton btnGuardar;
     public javax.swing.JButton btnListar;
     public javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnVolver2;
+    private javax.swing.JButton btnVolver3;
     private javax.swing.JButton btnVolver4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -418,7 +357,6 @@ public class JFVeterinario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLerror;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable listVeterinario;

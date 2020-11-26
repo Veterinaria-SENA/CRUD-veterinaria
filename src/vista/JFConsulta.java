@@ -8,8 +8,6 @@ package vista;
 import controlador.ControladorConsulta;
 import java.sql.Date;
 import modelo.ConsultaDAO;
-import clases.validaciones;
-import java.awt.Color;
 /**
  *
  * @author ASUS
@@ -56,7 +54,6 @@ public class JFConsulta extends javax.swing.JFrame {
         volverHC2 = new javax.swing.JButton();
         btnVolver3 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jLerror = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -70,54 +67,41 @@ public class JFConsulta extends javax.swing.JFrame {
         );
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("HISTORIA CLINICA");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("id");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("id historia clinica");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("id veterinario");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("fecha");
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("id tipo consulta");
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("diagnostico");
 
-        txId.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txIdKeyPressed(evt);
-            }
-        });
+        txId.setBackground(new java.awt.Color(255, 255, 255));
 
-        txid_historia_clinica.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txid_historia_clinicaKeyPressed(evt);
-            }
-        });
+        txid_historia_clinica.setBackground(new java.awt.Color(255, 255, 255));
 
-        txid_veterinario.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txid_veterinarioKeyPressed(evt);
-            }
-        });
+        txid_veterinario.setBackground(new java.awt.Color(255, 255, 255));
 
-        txid_tipo_consulta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txid_tipo_consultaKeyPressed(evt);
-            }
-        });
+        txid_tipo_consulta.setBackground(new java.awt.Color(255, 255, 255));
 
-        txdiagnostico.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txdiagnosticoKeyPressed(evt);
-            }
-        });
+        txdiagnostico.setBackground(new java.awt.Color(255, 255, 255));
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +162,7 @@ public class JFConsulta extends javax.swing.JFrame {
         });
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("TIPO DE CONSULTA MÉDICA");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -201,9 +186,9 @@ public class JFConsulta extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnRegistrar)
@@ -214,7 +199,7 @@ public class JFConsulta extends javax.swing.JFrame {
                                         .addComponent(txid_tipo_consulta)
                                         .addComponent(txdiagnostico)
                                         .addComponent(txFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 152, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(volverHC2)
@@ -228,10 +213,6 @@ public class JFConsulta extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -269,9 +250,7 @@ public class JFConsulta extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(27, 27, 27)
                 .addComponent(btnRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListar)
                     .addComponent(btnGuardar)
@@ -298,13 +277,9 @@ public class JFConsulta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        validaciones validar = new validaciones();
-        if(validar.validacion(this)==true)
-        {
-            ConsultaDAO modeloCRUD = new ConsultaDAO();
-            ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-            control.guardarConsulta(evt);
-        }
+        ConsultaDAO modeloCRUD = new ConsultaDAO();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.guardarConsulta(evt);     
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -314,13 +289,9 @@ public class JFConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        validaciones validar = new validaciones();
-        if(validar.validacion(this)==true)
-        {
-            ConsultaDAO modeloCRUD = new ConsultaDAO();
-            ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
-            control.editarConsulta();
-        }
+        ConsultaDAO modeloCRUD = new ConsultaDAO();
+        ControladorConsulta control=new ControladorConsulta(this,modeloCRUD);
+        control.editarConsulta();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -340,26 +311,6 @@ public class JFConsulta extends javax.swing.JFrame {
         frm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnVolver3ActionPerformed
-
-    private void txIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txIdKeyPressed
-        txId.setBackground(Color.white);
-    }//GEN-LAST:event_txIdKeyPressed
-
-    private void txid_historia_clinicaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txid_historia_clinicaKeyPressed
-        txid_historia_clinica.setBackground(Color.white);
-    }//GEN-LAST:event_txid_historia_clinicaKeyPressed
-
-    private void txid_veterinarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txid_veterinarioKeyPressed
-        txid_veterinario.setBackground(Color.white);
-    }//GEN-LAST:event_txid_veterinarioKeyPressed
-
-    private void txid_tipo_consultaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txid_tipo_consultaKeyPressed
-        txid_tipo_consulta.setBackground(Color.white);
-    }//GEN-LAST:event_txid_tipo_consultaKeyPressed
-
-    private void txdiagnosticoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txdiagnosticoKeyPressed
-        txdiagnostico.setBackground(Color.white);
-    }//GEN-LAST:event_txdiagnosticoKeyPressed
 
    /**
      * @param args the command line arguments
@@ -416,7 +367,6 @@ public class JFConsulta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLerror;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable listConsulta;

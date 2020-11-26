@@ -6,9 +6,7 @@
 package vista;
 
 import controlador.ControladorPropietario;
-import java.awt.Color;
 import modelo.PropietarioDAO;
-import clases.validaciones;
 
 /**
  *
@@ -59,7 +57,6 @@ public class JFPropietario extends javax.swing.JFrame {
         btnRegistrarMascota = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
-        jLerror = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,64 +77,43 @@ public class JFPropietario extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Id");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Apellido");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Direccion");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Telefono");
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Celular");
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Correo");
 
-        txId.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txIdKeyPressed(evt);
-            }
-        });
+        txId.setBackground(new java.awt.Color(255, 255, 255));
 
-        txNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txNombreKeyPressed(evt);
-            }
-        });
+        txNombre.setBackground(new java.awt.Color(255, 255, 255));
 
-        txApellido.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txApellidoKeyPressed(evt);
-            }
-        });
+        txApellido.setBackground(new java.awt.Color(255, 255, 255));
 
-        txDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txDireccionKeyPressed(evt);
-            }
-        });
+        txDireccion.setBackground(new java.awt.Color(255, 255, 255));
 
-        txTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txTelefonoKeyPressed(evt);
-            }
-        });
+        txTelefono.setBackground(new java.awt.Color(255, 255, 255));
 
-        txCelular.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txCelularKeyPressed(evt);
-            }
-        });
+        txCelular.setBackground(new java.awt.Color(255, 255, 255));
 
+        txCorreo.setBackground(new java.awt.Color(255, 255, 255));
         txCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txCorreoActionPerformed(evt);
-            }
-        });
-        txCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txCorreoKeyPressed(evt);
             }
         });
 
@@ -198,6 +174,7 @@ public class JFPropietario extends javax.swing.JFrame {
         });
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("FORMULARIO PROPIETARIO");
 
         btnVolver1.setBackground(new java.awt.Color(0, 153, 153));
@@ -217,6 +194,16 @@ public class JFPropietario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEliminar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 11, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(111, 111, 111)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,18 +219,16 @@ public class JFPropietario extends javax.swing.JFrame {
                                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addComponent(jLabel7)
-                                                            .addGap(63, 63, 63))
+                                                            .addGap(49, 49, 49))
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                             .addComponent(jLabel6)
-                                                            .addGap(62, 62, 62))))
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel4)
-                                                        .addComponent(jLabel5)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(jLabel2)
-                                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGap(14, 14, 14)))
+                                                            .addGap(48, 48, 48))))
+                                                .addComponent(jLabel4)
+                                                .addComponent(jLabel5)
+                                                .addComponent(jLabel3)
+                                                .addComponent(jLabel2)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(14, 14, 14)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(txTelefono)
                                                 .addComponent(txCelular)
@@ -254,19 +239,7 @@ public class JFPropietario extends javax.swing.JFrame {
                                                 .addComponent(txId, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addComponent(btnRegistrarMascota))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnEliminar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 11, Short.MAX_VALUE)))
+                        .addComponent(btnVolver1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -286,9 +259,9 @@ public class JFPropietario extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(txId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -309,9 +282,7 @@ public class JFPropietario extends javax.swing.JFrame {
                         .addComponent(txCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLerror, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnGuardar)
@@ -342,13 +313,10 @@ public class JFPropietario extends javax.swing.JFrame {
     }//GEN-LAST:event_txCorreoActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {
-            PropietarioDAO modeloCRUD = new PropietarioDAO();
-            ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
-            control.guardarPropietario(evt);
-        }
+        // TODO add your handling code here:
+        PropietarioDAO modeloCRUD = new PropietarioDAO();
+     ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
+     control.eliminarPropietario();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -359,20 +327,17 @@ public class JFPropietario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-         validaciones validar= new validaciones();
-        if (validar.validacion(this)==true)
-        {
-            PropietarioDAO modeloCRUD = new PropietarioDAO();
-            ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
-            control.editarPropietario();
-        }
+        // TODO add your handling code here:
+         PropietarioDAO modeloCRUD = new PropietarioDAO();
+     ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
+     control.guardarPropietario(evt);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         // TODO add your handling code here:
         PropietarioDAO modeloCRUD = new PropietarioDAO();
-        ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
-        control.llenarTabla(listPropietario);
+     ControladorPropietario control=new ControladorPropietario(this,modeloCRUD);
+     control.llenarTabla(listPropietario);
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
@@ -386,34 +351,6 @@ public class JFPropietario extends javax.swing.JFrame {
         frm.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnRegistrarMascotaActionPerformed
-
-    private void txIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txIdKeyPressed
-        txId.setBackground(Color.white);
-    }//GEN-LAST:event_txIdKeyPressed
-
-    private void txNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txNombreKeyPressed
-        txNombre.setBackground(Color.white);
-    }//GEN-LAST:event_txNombreKeyPressed
-
-    private void txApellidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txApellidoKeyPressed
-        txApellido.setBackground(Color.white);
-    }//GEN-LAST:event_txApellidoKeyPressed
-
-    private void txDireccionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txDireccionKeyPressed
-        txDireccion.setBackground(Color.white);
-    }//GEN-LAST:event_txDireccionKeyPressed
-
-    private void txTelefonoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txTelefonoKeyPressed
-        txTelefono.setBackground(Color.white);
-    }//GEN-LAST:event_txTelefonoKeyPressed
-
-    private void txCelularKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txCelularKeyPressed
-        txCelular.setBackground(Color.white);
-    }//GEN-LAST:event_txCelularKeyPressed
-
-    private void txCorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txCorreoKeyPressed
-        txCorreo.setBackground(Color.white);
-    }//GEN-LAST:event_txCorreoKeyPressed
 
     /**
      * @param args the command line arguments
@@ -467,7 +404,6 @@ public class JFPropietario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLerror;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
